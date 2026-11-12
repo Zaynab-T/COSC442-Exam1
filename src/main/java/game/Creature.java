@@ -205,8 +205,8 @@ public class Creature {
 
 	public void modifyHp(int amount, String causeOfDeath) { 
 		hp = CombatRules.calculateNewHp(hp, maxHp, amount);
-		this.causeOfDeath = causeOfDeath;
-
+		this.causeOfDeath = causeOfDeath; 
+		
 		if (CombatRules.isDead(hp)) {
 			doAction("die");
 			leaveCorpse();
