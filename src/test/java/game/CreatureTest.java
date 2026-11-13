@@ -50,4 +50,14 @@ public class CreatureTest {
         assertEquals(0, creature.hp());
         assertNotNull(world.item(1, 1, 0));
     }
+
+    @Test 
+    public void testModifyHp_DeadCreatureIsRemoved() {
+
+        new CreatureAi(creature);
+        world.add(creature);
+        creature.modifyHp(-100, "test");
+
+        assertNull(world.creature(1, 1, 0));
+    }
 }
